@@ -6,7 +6,7 @@ import (
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 
-func RecivedReviewToRabbitmq(queue string, conn *amqp.Connection) error {
+func RecivedFromRabbitmq(queue string, conn *amqp.Connection) error {
 	channel, err := conn.Channel()
 	if err != nil {
 		log.Println("failed to create channel", err)

@@ -19,22 +19,22 @@ func main() {
 
 	// Account related consumer
 
-	err = RecivedReviewToRabbitmq("accountCreated", rabbitClient)
+	err = RecivedFromRabbitmq("accountCreated", rabbitClient)
 	if err != nil {
 		log.Println("accountCreated error: ", err)
 	}
-	err = RecivedReviewToRabbitmq("accountDeleted", rabbitClient)
+	err = RecivedFromRabbitmq("accountDeleted", rabbitClient)
 	if err != nil {
 		log.Println("accountDeleted error: ", err)
 	}
-	err = RecivedReviewToRabbitmq("accountUpdated", rabbitClient)
+	err = RecivedFromRabbitmq("accountUpdated", rabbitClient)
 	if err != nil {
 		log.Println("accountUpdated error: ", err)
 	}
 
 	// Transaction related consumer
 
-	err = RecivedReviewToRabbitmq("transaction", rabbitClient)
+	err = RecivedFromRabbitmq("transaction", rabbitClient)
 	if err != nil {
 		log.Println("Error consuming from consumer: ", err)
 	}
